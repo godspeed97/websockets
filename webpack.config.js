@@ -1,5 +1,4 @@
 var path = require('path');
-var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: './src/main.js',
@@ -38,23 +37,11 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new UglifyJSPlugin({
-            uglifyOptions: {
-                mangle: false
-            }
-        })
-    ],
     resolve: {
         alias: {
             'vue$': 'vue/dist/vue.esm.js'
         },
         extensions: ['*', '.js', '.vue', '.json']
-    },
-    devServer: {
-        historyApiFallback: true,
-        noInfo: true,
-        overlay: true
     },
     performance: {
         hints: false
